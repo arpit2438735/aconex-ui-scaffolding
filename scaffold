@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+process.title = 'scaffold';
+
+var scaffold = require('./dist/');
+
+var argv = process.argv;
+
+scaffold.run(argv, function() {
+    watcher(argv);
+});
