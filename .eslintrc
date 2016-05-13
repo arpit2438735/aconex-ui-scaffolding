@@ -1,0 +1,20 @@
+{
+	"curly": true,
+	"eqeqeq": true,
+	"eqnull": true,
+	"expr": true,
+	"immed": true,
+	"maxdepth": 6,
+	"maxerr": 10,
+	"noarg": true,
+	"node": true,
+	"nonbsp": true,
+	"sub": true,
+	"trailing": true,
+	"undef": true,
+	"smarttabs": true,
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    }
+}

@@ -4,7 +4,9 @@ process.title = 'scaffold';
 
 var scaffold = require('./dist/');
 
-var argv = process.argv;
+var argv = require('yargs')
+            .usage('Usage: $0 <command> [options]')
+            .argv;
 
 scaffold.run(argv, function() {
     watcher(argv);
