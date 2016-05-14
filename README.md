@@ -8,15 +8,32 @@ $ npm install --save aconex-ui-scaffolding
 ```
 
 ## Usage
+Add github url inside package.json and type
 
 ```js
-var aconexUiScaffolding = require('aconex-ui-scaffolding');
-
-aconexUiScaffolding('Rainbow');
+scaffold <moduleName> -l <location>
+Ex:-
+scaffold mailsearch -l 'mail/search/'
 ```
-## License
 
-MIT © [ArPiT]()
+##Screenshots
+Command
+
+![ ](images/command.png)
+
+Folder Structure
+
+![ ](images/folder-structure.png)
+
+##ToDo
+
+1. Write Unit Tests
+2. Add more feature like able to add `directives` and `services`
+
+        Example: scaffold directive:tool -l<path> //Generate folder and template for the directive.
+        
+## License
+Copyright (c) 2016 . Licensed under the MIT license. © [ArPiT](https://github.com/arpit2438735/)
 
 
 [npm-image]: https://badge.fury.io/js/aconex-ui-scaffolding.svg

@@ -56,6 +56,6 @@
   "dependencies": {
     "fs-path": "0.0.22",
     "replacestream": "^4.0.0",
-    "split": "^1.0.0"
+    "yargs": "^4.7.0"
   }
 }

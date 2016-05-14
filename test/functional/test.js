@@ -9,16 +9,17 @@ let files;
 
 describe('Scaffolding', function () {
 
-    before(() => {
+    before((done) => {
         const argv = {
             _: ['test'],
             l: 'test/output'
         };
 
         scaffold.run(argv);
+        done();
     });
 
-    before(() => {
+    before((done) => {
         fsPath.find('test/functional/expected', (err, list) => {
             if (err) {
                 console.log(err);
@@ -26,6 +27,7 @@ describe('Scaffolding', function () {
 
             dirs = list.dirs;
             files = list.files;
+            done();
         });
     });
 
