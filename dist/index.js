@@ -22,7 +22,10 @@ var hardCodedName = '<%= templateName %>';
 var path = undefined;
 
 var createWriteStream = function createWriteStream(path, fileName) {
-    return _fs2['default'].createWriteStream(path + "/" + fileName);
+    if (path) {
+        return _fs2['default'].createWriteStream(path + "/" + fileName);
+    }
+    return _fs2['default'].createWriteStream(fileName);
 };
 
 var makeDirectory = function makeDirectory(dirName) {
