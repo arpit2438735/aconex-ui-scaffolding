@@ -16,7 +16,7 @@
     ""
   ],
   "bin": {
-    "scaffold": "scaffold"
+    "aconex-ui-scaffolding": "scaffold"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
