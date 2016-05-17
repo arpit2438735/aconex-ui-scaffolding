@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-process.title = 'scaffold';
-
 var scaffold = require('./dist/');
 
 var argv = require('yargs')
