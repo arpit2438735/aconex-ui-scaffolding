@@ -8,13 +8,7 @@
     "email": "arpit2438735@gmail.com",
     "url": ""
   },
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "keywords": [
-    ""
-  ],
+  "main": "./index.js",
   "bin": {
     "aconex-ui-scaffolding": "scaffold"
   },
