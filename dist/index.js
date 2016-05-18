@@ -14,6 +14,10 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
 var _parse = require('./parse');
 
 var _parse2 = _interopRequireDefault(_parse);
@@ -59,7 +63,7 @@ var scaffold = {
             });
 
             list.files.forEach(function (file) {
-                var fileName = file.replace(process.cwd().toString() + "/template/", "");
+                var fileName = file.replace(_path2['default'].join(__dirname + "/../template").toString(), "");
 
                 if (fileName.indexOf('controllers') >= 0) {
                     fileName = fileName.replace("Controller", moduleName + "Controller");
