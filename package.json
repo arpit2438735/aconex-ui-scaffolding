@@ -10,7 +10,7 @@
   },
   "main": "./index.js",
   "bin": {
-    "aconex-ui-scaffolding": "scaffold"
+    "scaffold": "scaffold"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
