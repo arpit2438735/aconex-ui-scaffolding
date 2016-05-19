@@ -45,8 +45,7 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp",
-    "scaffold": "node index.js",
-    "postinstall": "gulp prepublish"
+    "scaffold": "node index.js"
   },
   "license": "MIT",
   "dependencies": {
