@@ -76,7 +76,7 @@ var scaffold = {
                 parse.replace(hardCodedName, file).pipe(createWriteStream(path, fileName));
             });
 
-            console.log("Successfully scaffold your" + moduleName + 'at' + path);
+            console.log("Successfully scaffold your'" + moduleName + "' at " + path);
         });
     }
 };
