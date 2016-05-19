@@ -65,12 +65,18 @@ var scaffold = {
             list.files.forEach(function (file) {
                 var fileName = file.replace(_path2['default'].join(__dirname + "/../template").toString(), "");
 
+                if (fileName.indexOf('.gitkeep') >= 0) {
+                    return;
+                }
+
                 if (fileName.indexOf('controllers') >= 0) {
                     fileName = fileName.replace("Controller", moduleName + "Controller");
                 }
 
                 parse.replace(hardCodedName, file).pipe(createWriteStream(path, fileName));
             });
+
+            console.log("Successfully scaffold your" + moduleName + 'at' + path);
         });
     }
 };

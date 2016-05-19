@@ -26,7 +26,7 @@ describe('Scaffolding', function () {
             }
 
             dirs = list.dirs;
-            files = list.files;
+            files = list.files.filter(function(file){return file.split('/').indexOf('.gitkeep') === -1});
             done();
         });
     });
