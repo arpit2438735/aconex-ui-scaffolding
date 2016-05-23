@@ -35,9 +35,19 @@ var Parse = (function () {
             return _fs2['default'].createReadStream(fileName);
         }
     }, {
+        key: '_replaceString',
+        value: function _replaceString(file, templateString, replaceString) {
+            return this._readFile(file).pipe(this.replaceStream(templateString, replaceString));
+        }
+    }, {
         key: 'replace',
-        value: function replace(templateString, file) {
-            return this._readFile(file).pipe((0, _replacestream2['default'])(templateString, this.replaceString));
+        value: function replace(file, templateString) {
+            return this._replaceString(file, templateString, this.replaceString);
+        }
+    }, {
+        key: 'replaceStream',
+        value: function replaceStream(templateString, replaceString) {
+            return (0, _replacestream2['default'])(templateString, replaceString);
         }
     }]);
 

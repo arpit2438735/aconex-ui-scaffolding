@@ -12,7 +12,7 @@ describe('Scaffolding', function () {
     before((done) => {
         const argv = {
             _: ['test'],
-            l: 'test/output'
+            location: 'test/output'
         };
 
         scaffold.run(argv);

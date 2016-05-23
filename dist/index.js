@@ -23,7 +23,10 @@ var _parse = require('./parse');
 var _parse2 = _interopRequireDefault(_parse);
 
 var hardCodedName = '<%= templateName %>';
-var path = undefined;
+var path = undefined,
+    directive = undefined;
+
+var fileLocation = 'template/angular/main';
 
 var createWriteStream = function createWriteStream(path, fileName) {
     if (path) {
@@ -40,19 +43,35 @@ var makeDirectory = function makeDirectory(dirName) {
     });
 };
 
+var generateUrl = function generateUrl(url) {
+    if (url.slice(-1) !== '/') {
+        return url + "/";
+    }
+
+    return url;
+};
+
 var scaffold = {
     run: function run(argv) {
-        var moduleName = argv._.pop();
+        var moduleName = undefined;
 
-        if (argv.l) {
-            path = argv.l;
+        if (argv.directive) {
+            moduleName = argv.directive;
+            directive = argv.directive;
+            fileLocation = "template/angular/directive";
+        } else {
+            moduleName = argv._.pop();
+        }
+
+        if (argv.location) {
+            path = argv.location;
         }
 
         var parse = new _parse2['default'](moduleName);
 
         makeDirectory(path);
 
-        _fsPath2['default'].find(__dirname + '/../template', function (err, list) {
+        _fsPath2['default'].find(_path2['default'].join(__dirname + '/../' + fileLocation), function (err, list) {
 
             if (err) {
                 console.log(err);
@@ -63,7 +82,7 @@ var scaffold = {
             });
 
             list.files.forEach(function (file) {
-                var fileName = file.replace(_path2['default'].join(__dirname + "/../template").toString(), "");
+                var fileName = file.replace(_path2['default'].join(__dirname + "/../" + fileLocation.toString()), "");
 
                 if (fileName.indexOf('.gitkeep') >= 0) {
                     return;
@@ -73,10 +92,16 @@ var scaffold = {
                     fileName = fileName.replace("Controller", moduleName + "Controller");
                 }
 
-                parse.replace(hardCodedName, file).pipe(createWriteStream(path, fileName));
+                if (argv.directive) {
+                    fileName = fileName.replace('index', moduleName);
+
+                    return parse.replace(file, hardCodedName).pipe(parse.replaceStream('<%= directiveTemplatePath %>', generateUrl(path) + directive + '.tpl.html')).pipe(createWriteStream(path, fileName));
+                }
+
+                return parse.replace(file, hardCodedName).pipe(createWriteStream(path, fileName));
             });
 
-            console.log("Successfully scaffold your'" + moduleName + "' at " + path);
+            console.log("Successfully scaffold your '" + moduleName + "' at " + path);
         });
     }
 };

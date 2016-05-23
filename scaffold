@@ -3,7 +3,16 @@
 var scaffold = require('./dist/');
 
 var argv = require('yargs')
-            .usage('Usage: $0 <command> [options]')
+            .usage('Usage: $0 <command> follow below instructions')
+            .option('directive', {
+                alias: 'd',
+                describe: 'scaffold for directive'
+            })
+            .option('location', {
+                alias: 'l',
+                describe: 'location where you want to scaffold for directive'
+            })
+            .help()
             .argv;
 
 scaffold.run(argv, function() {
