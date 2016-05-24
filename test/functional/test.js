@@ -31,8 +31,9 @@ describe('Scaffolding', function () {
         });
     });
 
-    after(() => {
+    after((done) => {
         fsPath.remove('test/output');
+        done();
     });
 
     it('should contain expected directories', (done) => {

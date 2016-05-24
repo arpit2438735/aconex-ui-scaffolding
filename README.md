@@ -11,13 +11,23 @@ $ npm install --save aconex-ui-scaffolding
 ## Usage
 Add github url inside package.json and type
 
+#### For Module
 ```js
 scaffold <moduleName> -l <location>
 Ex:-
 scaffold mailsearch -l 'mail/search/'
 ```
 
+#### For Directive
+```js
+scaffold -d <direcitve> -l <location>
+Ex:-
+scaffold -d component -l 'mail/search/'
+```
 ##Screenshots
+
+**For Module**
+
 Command
 
 ![ ](images/command.png)
@@ -26,12 +36,21 @@ Folder Structure
 
 ![ ](images/folder-structure.png)
 
+**For Directive**
+Command
+
+![ ](images/command-directive.png)
+
+Folder Structure
+
+![ ](images/folder-structure-directive.png)
+
 ##ToDo
 
 1. Write Unit Tests
-2. Add more feature like able to add `directives` and `services`
+2. Add more feature like able to add `services`
 
-        Example: scaffold directive:tool -l<path> //Generate folder and template for the directive.
+        Example: scaffold -s foo -l <path> //Generate folder for the service.
         
 ## License
 Copyright (c) 2016 . Licensed under the MIT license. © [ArPiT](https://github.com/arpit2438735/)
