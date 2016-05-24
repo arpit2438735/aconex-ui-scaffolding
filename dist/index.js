@@ -92,7 +92,7 @@ var scaffold = {
                     fileName = fileName.replace("Controller", moduleName + "Controller");
                 }
 
-                if (argv.directive) {
+                if (argv.directive && fileName.indexOf('index.js')) {
                     fileName = fileName.replace('index', moduleName);
 
                     return parse.replace(file, hardCodedName).pipe(parse.replaceStream('<%= directiveTemplatePath %>', generateUrl(path) + directive + '.tpl.html')).pipe(createWriteStream(path, fileName));
@@ -101,7 +101,7 @@ var scaffold = {
                 return parse.replace(file, hardCodedName).pipe(createWriteStream(path, fileName));
             });
 
-            console.log("Successfully scaffold your '" + moduleName + "' at " + path);
+            console.log("Successfully scaffold your '" + moduleName + " ' at " + path);
         });
     }
 };
