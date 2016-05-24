@@ -16,9 +16,8 @@ describe('Scaffolding for directive', function () {
         done();
     });
 
-    after((done) => {
+    after(() => {
         fsPath.remove('test/output');
-        done();
     });
 
     it('directive.js contain the same content', (done) => {
