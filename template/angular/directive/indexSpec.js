@@ -1,7 +1,7 @@
 (function(angular) {
     'use strict';
 
-    describe('<%= templateName =%> directive', function() {
+    describe('<%= templateName %> directive', function() {
 
         beforeEach(function() {
 

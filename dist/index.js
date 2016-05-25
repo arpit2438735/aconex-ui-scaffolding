@@ -92,7 +92,7 @@ var scaffold = {
                     fileName = fileName.replace("Controller", moduleName + "Controller");
                 }
 
-                if (argv.directive && fileName.indexOf('index.js')) {
+                if (argv.directive && fileName.indexOf('index.js') >= 0) {
                     fileName = fileName.replace('index', moduleName);
 
                     return parse.replace(file, hardCodedName).pipe(parse.replaceStream('<%= directiveTemplatePath %>', generateUrl(path) + directive + '.tpl.html')).pipe(createWriteStream(path, fileName));
